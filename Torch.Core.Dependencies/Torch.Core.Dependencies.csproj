@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Torch.Core.Dependencies</RootNamespace>
     <AssemblyName>Torch.Core.Dependencies</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,9 +44,15 @@
     <Compile Include="DirectoryDependency.cs" />
     <Compile Include="FileDependency.cs" />
     <Compile Include="GacDependency.cs" />
+    <Compile Include="IisDepedency.cs" />
+    <Compile Include="InternetConnectionDepedency.cs" />
+    <Compile Include="PingDependency.cs" />
+    <Compile Include="NetFrameworkDepedency.cs" />
     <Compile Include="PortDepedency.cs" />
+    <Compile Include="PowerShellDependency.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerDependency.cs" />
+    <Compile Include="WebResourceDependency.cs" />
     <Compile Include="WindowsServiceDependency.cs" />
     <Compile Include="WindowsServiceDependencyResult.cs" />
   </ItemGroup>

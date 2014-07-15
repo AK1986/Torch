@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Torch.Core.Dependencies;
 using System.Security.AccessControl;
 using System.IO;
+using Torch.Core.Enums;
 
 namespace Torch.UnitTests
 {
@@ -13,6 +14,10 @@ namespace Torch.UnitTests
         public void DirectoryDependency_Exists_UnitTests()
         {
             //Arrange 
+            var versions = new NetFrameworkDepedency(new RequiredFramework[]{
+               new RequiredFramework{Version=FrameworkVersion.Net20,ServicePack=2}
+            });
+            var res = versions.Check(); 
             var dir = "torch" + Guid.NewGuid().ToString().Replace("-" ,"");
             System.IO.Directory.CreateDirectory(dir);
             bool exists = System.IO.Directory.Exists(dir);

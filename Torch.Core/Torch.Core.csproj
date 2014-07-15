@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Torch.Core</RootNamespace>
     <AssemblyName>Torch.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +44,7 @@
     <Compile Include="DynamicComponentListBuilder.cs" />
     <Compile Include="Enums\ComponentStatus.cs" />
     <Compile Include="Enums\DependencyStatus.cs" />
+    <Compile Include="Enums\NetFrameworkVersion.cs" />
     <Compile Include="Enums\WindowsServiceStatus.cs" />
     <Compile Include="GenericDependencyCheckResult.cs" />
     <Compile Include="Interfaces\IComponentListBuilder.cs" />

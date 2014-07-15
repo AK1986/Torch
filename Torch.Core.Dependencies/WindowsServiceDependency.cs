@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.ServiceProcess;
 using System.Text;
-using System.Threading.Tasks;
+
 using Torch.Core.Enums;
 using Torch.Core.Interfaces;
 
@@ -55,11 +55,25 @@ namespace Torch.Core.Dependencies
                     bool serviceExists = false;
                     if (string.IsNullOrEmpty(_machineName))
                     {
-                        serviceExists = ServiceController.GetServices().Any(s => s.ServiceName == _serviceName);
+                        foreach (var service in ServiceController.GetServices())
+                        {
+                            if (service.ServiceName == _serviceName)
+                            {
+                                serviceExists = true;
+                                break;
+                            }
+                        }
                     }
                     else
                     {
-                        serviceExists = ServiceController.GetServices(_machineName).Any(s => s.ServiceName == _serviceName);
+                        foreach (var service in ServiceController.GetServices(_machineName))
+                        {
+                            if (service.ServiceName == _serviceName)
+                            {
+                                serviceExists = true;
+                                break;
+                            }
+                        }
                     }
                     if (serviceExists)
                     {
