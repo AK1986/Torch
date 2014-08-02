@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.ServiceProcess;
 using System.Text;
-
-using Torch.Core.Enums;
-using Torch.Core.Interfaces;
 
 namespace Torch.Core.Dependencies
 {
@@ -20,7 +16,7 @@ namespace Torch.Core.Dependencies
 
         public WindowsServiceDependency(string serviceName, WindowsServiceStatus expectedStatus = WindowsServiceStatus.Running,
             string machineName = null,
-            bool checkInstalled = false,
+            bool checkIfInstalled = false,
             int statusWaitTimeout = -1)
         {
             if (string.IsNullOrEmpty(serviceName))
@@ -29,7 +25,7 @@ namespace Torch.Core.Dependencies
             _name = "WindowsServiceDependency:" + serviceName;
             _serviceName = serviceName;
             _machineName = machineName;
-            _checkInstalled = checkInstalled;
+            _checkInstalled = checkIfInstalled;
             _expectedStatus = expectedStatus;
             _statusWaitTimeout = statusWaitTimeout;
         }
@@ -125,6 +121,12 @@ namespace Torch.Core.Dependencies
                     {
                         result.Status = DependencyStatus.Success;
                     }
+                    else
+                    {
+                        result.Status = DependencyStatus.Failure;
+                        result.Message = "Windows service: " + _serviceName + " is not in " 
+                            + _expectedStatus.ToString() + " state";
+                    }
                 }
             }
             catch (System.ComponentModel.Win32Exception ex)
@@ -148,6 +150,7 @@ namespace Torch.Core.Dependencies
 
             return result;
         }
+
         private ServiceControllerStatus getMappedStatus(WindowsServiceStatus status)
         {
             ServiceControllerStatus result = default(ServiceControllerStatus);

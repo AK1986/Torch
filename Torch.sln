@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Torch.UnitTests", "Torch.Un
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Torch.Core", "Torch.Core\Torch.Core.csproj", "{2BF640D1-4E0A-4E14-930E-CBABDABFFC28}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UseCases", "UseCases", "{844C09EF-CBD4-4140-BB14-CF71D6A838BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Torch.ConsoleAppSample", "Torch.ConsoleAppSample\Torch.ConsoleAppSample.csproj", "{2919AEB5-D35F-4356-9841-1939256DF5FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,8 +29,15 @@ Global
 		{2BF640D1-4E0A-4E14-930E-CBABDABFFC28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BF640D1-4E0A-4E14-930E-CBABDABFFC28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BF640D1-4E0A-4E14-930E-CBABDABFFC28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2919AEB5-D35F-4356-9841-1939256DF5FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2919AEB5-D35F-4356-9841-1939256DF5FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2919AEB5-D35F-4356-9841-1939256DF5FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2919AEB5-D35F-4356-9841-1939256DF5FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2919AEB5-D35F-4356-9841-1939256DF5FD} = {844C09EF-CBD4-4140-BB14-CF71D6A838BC}
 	EndGlobalSection
 EndGlobal

@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-
 using System.Text;
-
-using Torch.Core.Interfaces;
 
 namespace Torch.Core.Dependencies
 {
@@ -39,17 +36,17 @@ namespace Torch.Core.Dependencies
             try
             {
                 CheckDatabaseUp(_connString);
-                result.Status = Enums.DependencyStatus.Success;
+                result.Status = DependencyStatus.Success;
             }
             catch (SqlException sqlEx)
             {
-                result.Status = Enums.DependencyStatus.Failure;
+                result.Status = DependencyStatus.Failure;
                 result.Exception = sqlEx;
                 result.Message = sqlEx.Message;
             }
             catch (Exception ex)
             {
-                result.Status = Enums.DependencyStatus.Failure;
+                result.Status = DependencyStatus.Failure;
                 result.Exception = ex;
                 result.Message = ex.Message;
             }

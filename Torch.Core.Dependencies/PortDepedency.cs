@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 
-using Torch.Core.Interfaces;
 
 namespace Torch.Core.Dependencies
 {
@@ -41,16 +39,16 @@ namespace Torch.Core.Dependencies
             {
                 if (!PortInUse(_port))
                 {
-                    result.Status = Enums.DependencyStatus.Success;
+                    result.Status = DependencyStatus.Success;
                 }
                 else
                 {
-                    result.Status = Enums.DependencyStatus.Failure;
+                    result.Status = DependencyStatus.Failure;
                 }
             }
             catch (Exception ex)
             {
-                result.Status = Enums.DependencyStatus.Failure;
+                result.Status = DependencyStatus.Failure;
                 result.Message = "Error while checking port in use";
                 result.Exception = ex;
             }

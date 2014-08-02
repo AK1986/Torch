@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Text;
-
 
 namespace Torch.Core
 {
-    public enum ComponentStatus
+    public interface IComponentFinder
     {
-        OK,Partial,Failed,FailedDueToError
+        IEnumerable<IComponent> GetList();
     }
 }

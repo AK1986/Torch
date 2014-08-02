@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
-using Torch.Core.Enums;
-using Torch.Core.Interfaces;
 
 namespace Torch.Core.Dependencies
 {
@@ -69,7 +67,7 @@ namespace Torch.Core.Dependencies
             }
             catch (Exception ex)
             {
-                result.Status = Enums.DependencyStatus.Failure;
+                result.Status = DependencyStatus.Failure;
                 result.Message = ex.Message;
                 result.Exception = ex;
             }

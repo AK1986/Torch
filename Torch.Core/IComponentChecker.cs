@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Text;
 
-
-namespace Torch.Core.Interfaces
+namespace Torch.Core
 {
    public interface IComponentChecker
     {
-       List<IComponentCheckResult> CheckComponents(IEnumerable<IComponent> components);
+       List<ComponentCheckResult> CheckComponents(IEnumerable<IComponent> components);
     }
 }

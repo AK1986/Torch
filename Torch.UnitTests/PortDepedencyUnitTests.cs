@@ -20,7 +20,7 @@ namespace Torch.UnitTests
             var result = portDependency.Check();
 
             //Assert
-            Assert.IsTrue(result.Status == Core.Enums.DependencyStatus.Success);
+            Assert.IsTrue(result.Status == Core.DependencyStatus.Success);
         }
         [TestMethod]
         public void PortDepedency_Neg_Test()
@@ -35,7 +35,7 @@ namespace Torch.UnitTests
             var result = portDependency.Check();
 
             //Assert
-            Assert.IsTrue(result.Status == Core.Enums.DependencyStatus.Failure);
+            Assert.IsTrue(result.Status == Core.DependencyStatus.Failure);
         }
     }
 }

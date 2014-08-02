@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
-
-using Torch.Core.Interfaces;
 
 namespace Torch.Core.Dependencies
 {
@@ -52,17 +49,17 @@ namespace Torch.Core.Dependencies
                 }
                 if (inGac)
                 {
-                    result.Status = Enums.DependencyStatus.Success;
+                    result.Status = DependencyStatus.Success;
                 }
                 else
                 {
-                    result.Status = Enums.DependencyStatus.Failure;
+                    result.Status = DependencyStatus.Failure;
                     result.Message = "Assembly not found in GAC, please check assembly name ,use processorArchitecture param";
                 }
             }
             catch (Exception ex)
             {
-                result.Status = Enums.DependencyStatus.Failure;
+                result.Status = DependencyStatus.Failure;
                 result.Message = ex.Message;
                 result.Exception = ex;
             }

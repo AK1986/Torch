@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Text;
-
-using Torch.Core.Enums;
-using Torch.Core.Interfaces;
 
 namespace Torch.Core.Dependencies
 {
@@ -15,6 +11,7 @@ namespace Torch.Core.Dependencies
         public InternetConnectionDepedency(int timeoutInSeconds = 10)
         {
             _timeout = timeoutInSeconds;
+            _name = "Internet Connection Depedency";
         }
         public string Name
         {
@@ -41,10 +38,11 @@ namespace Torch.Core.Dependencies
                               microsoft.Check().Status == DependencyStatus.Success;
 
                 result.Status = success ? DependencyStatus.Success : DependencyStatus.Failure;
+                result.Message = success ? "" : "Could not connect to Internet";
             }
             catch (Exception ex)
             {
-                result.Status = Enums.DependencyStatus.Failure;
+                result.Status = DependencyStatus.Failure;
                 result.Message = ex.Message;
                 result.Exception = ex;
             }

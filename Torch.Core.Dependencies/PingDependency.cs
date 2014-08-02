@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
-
-using Torch.Core.Enums;
-using Torch.Core.Interfaces;
 
 namespace Torch.Core.Dependencies
 {
@@ -25,6 +21,7 @@ namespace Torch.Core.Dependencies
              _isIpAddress = IPAddress.TryParse(machineNameOrIpadress, out ipAddress);
 
              _machineNameOrIpadress = machineNameOrIpadress;
+             _name ="PingDependency-"+ machineNameOrIpadress;
          }
      
         public string Name
@@ -50,7 +47,7 @@ namespace Torch.Core.Dependencies
             }
             catch (Exception ex)
             {
-                result.Status = Enums.DependencyStatus.Failure;
+                result.Status = DependencyStatus.Failure;
                 result.Message = ex.Message;
                 result.Exception = ex;
             }

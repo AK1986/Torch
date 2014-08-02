@@ -21,7 +21,7 @@ namespace Torch.UnitTests
             var result= fileDependency.Check();
           
             //Assert
-            Assert.AreEqual(result.Status == Core.Enums.DependencyStatus.Success, exists);
+            Assert.AreEqual(result.Status == Core.DependencyStatus.Success, exists);
             Assert.IsNull(result.Exception);
 
             //clean up
@@ -44,7 +44,7 @@ namespace Torch.UnitTests
             var result = fileDependency.Check();
 
             //Assert
-            Assert.AreEqual(result.Status == Core.Enums.DependencyStatus.Success, canRead);
+            Assert.AreEqual(result.Status == Core.DependencyStatus.Success, canRead);
             Assert.IsNull(result.Exception);
 
             //clean up
@@ -71,7 +71,7 @@ namespace Torch.UnitTests
             var result = fileDependency.Check();
 
             //Assert
-            Assert.AreEqual(result.Status == Core.Enums.DependencyStatus.Success, canWrite);
+            Assert.AreEqual(result.Status == Core.DependencyStatus.Success, canWrite);
             Assert.IsNull(result.Exception);
 
             //clean up
@@ -91,7 +91,7 @@ namespace Torch.UnitTests
             var result= fileDependency.Check();
           
             //Assert
-            Assert.AreEqual(result.Status == Core.Enums.DependencyStatus.Failure, true);
+            Assert.AreEqual(result.Status == Core.DependencyStatus.Failure, true);
             Assert.IsNotNull(result.Exception);
         }
 
@@ -106,7 +106,7 @@ namespace Torch.UnitTests
             var result = fileDependency.Check();
 
             //Assert
-            Assert.AreEqual(result.Status == Core.Enums.DependencyStatus.Failure, true);
+            Assert.AreEqual(result.Status == Core.DependencyStatus.Failure, true);
             Assert.IsNotNull(result.Exception);
         }
 
@@ -124,7 +124,7 @@ namespace Torch.UnitTests
             var result = fileDependency.Check();
 
             //Assert
-            Assert.AreEqual(result.Status == Core.Enums.DependencyStatus.Failure, true);
+            Assert.AreEqual(result.Status == Core.DependencyStatus.Failure, true);
             Assert.IsNotNull(result.Exception);
         }
     }

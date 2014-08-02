@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Torch.Core.Dependencies;
-using Torch.Core.Enums;
+using Torch.Core;
+
 
 namespace Torch.UnitTests
 {

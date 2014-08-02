@@ -20,7 +20,7 @@ namespace Torch.UnitTests
            var result = sqlServerDependency.Check();
 
            //Assert
-           Assert.IsTrue(result.Status == Core.Enums.DependencyStatus.Success);
+           Assert.IsTrue(result.Status == Core.DependencyStatus.Success);
         }
     
         [TestMethod]
@@ -34,7 +34,7 @@ namespace Torch.UnitTests
             var result = sqlServerDependency.Check();
 
             //Assert
-            Assert.IsTrue(result.Status == Core.Enums.DependencyStatus.Failure);
+            Assert.IsTrue(result.Status == Core.DependencyStatus.Failure);
         }
     }
 }

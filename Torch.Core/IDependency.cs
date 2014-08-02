@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-
-namespace Torch.Core.Interfaces
+namespace Torch.Core
 {
    public interface IDependency
     {

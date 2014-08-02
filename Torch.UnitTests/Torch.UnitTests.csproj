@@ -61,6 +61,7 @@
     <Compile Include="GacDependencyTests.cs" />
     <Compile Include="NetFrameworkDepedencyTests.cs" />
     <Compile Include="InternetConnectionDepedencyTests.cs" />
+    <Compile Include="PowerShellDependencyTests.cs" />
     <Compile Include="WebResourceDependecyTests.cs" />
     <Compile Include="WindowsServiceDependencyTests.cs" />
   </ItemGroup>

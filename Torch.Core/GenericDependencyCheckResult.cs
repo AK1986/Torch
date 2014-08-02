@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Text;
-
-using Torch.Core.Enums;
-using Torch.Core.Interfaces;
 
 namespace Torch.Core
 {
@@ -15,6 +11,8 @@ namespace Torch.Core
         public Exception Exception { get; set; }
 
         public string Message { get; set; }
+
+        public string DependencyName { get; set; }
 
         public GenericDependencyCheckResult(DependencyStatus status, Exception ex,string message)
         {
